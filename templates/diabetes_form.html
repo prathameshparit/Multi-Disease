@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Multi Disease Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/assets/css/custom.css">
+  <link rel="stylesheet" href="static/assets/css/form.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name"><a href="/"> Disease Prediction</a></div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="db_form">
+          <i class="uil uil-medical-drip"></i>
+          <span class="links_name">Diabetes Prediction</span>
+        </a>
+         <span class="tooltip">Diabetes Prediction</span>
+      </li>
+      <li>
+       <a href="hd_form">
+         <i class="uil uil-heartbeat"></i>
+         <span class="links_name">Heart Disease Prediction</span>
+       </a>
+       <span class="tooltip">Heart Disease Prediction</span>
+     </li>
+     <li>
+       <a href="pk_form">
+         <i class="uil uil-bed"></i>
+         <span class="links_name">Parkinson's Disease</span>
+       </a>
+       <span class="tooltip">Parkinson's Disease</span>
+     </li>
+     <li>
+       <a href="od_form">
+         <i class="uil uil-medkit"></i>
+         <span class="links_name">Other Diseases</span>
+       </a>
+       <span class="tooltip">Other Diseases</span>
+     </li>
+
+    </ul>
+  </div>
+    <section class="home-section">
+      <div class="text"><a href="/"> Disease Prediction</a></div>
+
+      <div class="container">
+        <header>Diabetes Prediction</header>
+
+        <form action="{{ url_for('db_form')}}" method="post">
+<!--            <div class="form first">-->
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname"placeholder="Enter your name" value="Prathamesh Parit" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Medical Report</span>
+
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label for="preg">Pregnancies</label>
+                            <input type="text" id="preg" name="preg" type="number" placeholder="Enter no. of Pregnancies" value="6" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="glucose">Glucose</label>
+                            <input type="text" id="glucose" name="glucose" type="text" placeholder="Enter Glucose level" value="148" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="bp">Blood Pressure</label>
+                            <input type="text" id="bp" name="bp" type="text" placeholder="Enter Blood Pressure level" value="72" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="skin">SkinThickness</label>
+                            <input type="text" id="skin" name="skin" type="text" placeholder="Enter Skin Thickness value" value="35" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="insulin">Insulin</label>
+                            <input type="text" id="insulin" name="insulin" type="text" placeholder="Enter Insulin level" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="bmi">BMI</label>
+                            <input type="text" id="bmi" name="bmi" type="text" placeholder="Enter BMI value" value="33.6" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="dpf">Diabetes Pedigree Function</label>
+                            <input type="text" id="dpf" name="dpf" type="text" placeholder="Enter DPF value" value="0.627" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="age">Age</label>
+                            <input type="text" id="age" name="age" type="text" placeholder="Enter age" value="50" required>
+                        </div>
+
+                    </div>
+                    <div class="buttons">
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="static/js/form.js"></script>
+
+
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+</body>
+</html>

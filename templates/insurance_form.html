@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Multi Disease Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/assets/css/custom.css">
+  <link rel="stylesheet" href="static/assets/css/form.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <section class="home-section">
+      <div class="text"><a href="/"> Insurance Amount Prediction</a></div>
+
+      <div class="container">
+        <header>Insurance Amount Prediction</header>
+
+        <form action="{{ url_for('insurance_form')}}" method="post">
+<!--            <div class="form first">-->
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname"placeholder="Enter your name" value="Prathamesh Parit" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Report</span>
+
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label for="age">Age</label>
+                            <input type="text" id="age" name="age" type="number" placeholder="Enter no. of Age" value="31" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="sex">Sex</label>
+                            <input type="text" id="sex" name="sex" type="text" placeholder="Enter Sex level" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="bmi">bmi</label>
+                            <input type="text" id="bmi" name="bmi" type="text" placeholder="Enter BMI" value="25.74" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="children">children</label>
+                            <input type="text" id="children" name="children" type="text" placeholder="Enter children value" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="smoker">smoker</label>
+                            <input type="text" id="smoker" name="smoker" type="text" placeholder="Enter smoker level" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="region">region</label>
+                            <input type="text" id="region" name="region" type="text" placeholder="Enter region value" value="0" required>
+                        </div>
+
+                    </div>
+                    <div class="buttons">
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="static/js/form.js"></script>
+
+
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Multi Disease Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/"><span>Multi Disease Prediction</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Results</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Results</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+      <section id="results" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Results</h2>
+          <p>Prediction of Model</p>
+        </div>
+          </div>
+    </section><!-- End insurance Section -->
+    <!-- breadcrumb start-->
+{% if type == 'csv'%}
+    <!-- our depertment part start-->
+<div class="row" id="lasteventimg" style="
+  display: flex;
+  margin: 0 auto;
+height: 300%;">
+
+                                    <table>
+                                {{ data | safe}}
+                                </table>
+
+                                </div>
+            <div class="row justify-content-center text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-8">
+                                <h1>{{predictions}}</h1>
+
+
+                                <row style="display: flex;justify-content: center display: block; margin-left: auto;margin-right: auto;" >
+                                  <img style="display: flex; margin-left: auto;margin-right: auto;"class = "result-img" src='static/assets/img/report.png' width="20%">
+                                </row>
+      </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+{% elif type == 'img'%}
+            <div class="row justify-content-center text-center">
+                <div class="col-xl-12">
+                        {% if model == 'pneumonia'%}
+                            {% if answer == 'Pneumonia'%}
+                                    <h2>Chest X-ray shows that patient has {{predictions[0].split("_")[0]}}</h2>
+                            {% elif answer == 'Normal' %}
+                                    <h2>Chest X-ray shows that patient is {{predictions[0].split("_")[0]}}</h2>
+                                    <div class="row">
+                            {% endif %}
+                        {% elif model == 'tb'%}
+                            {% if answer == 'Tuberculosis'%}
+                                    <h2>Chest X-ray shows that patient has {{predictions[0].split("_")[0]}}</h2>
+                            {% elif answer == 'Normal' %}
+                                    <h2>Chest X-ray shows that patient is {{predictions[0].split("_")[0]}}</h2>
+                                    <div class="row">
+                            {% endif %}
+                        {% elif model == 'bt' %}
+                                <h2>MRI shows that patient has {{predictions[0].split("_")[0]}}</h2>
+                                    <div class="row">
+                        {% elif model == 'ct' %}
+                                {% if answer == 'Cataract'%}
+                                    <h2>The patient has {{predictions[0].split("_")[0]}}</h2>
+                                {% elif answer == 'Normal' %}
+                                    <h2>The patient is {{predictions[0].split("_")[0]}}</h2>
+                                    <div class="row">
+                                {% endif %}
+                        {% endif %}
+
+                            <section class="body">
+                                  <div class="header">
+                                    <row style="width: 48%; height:60%; display: flex;justify-content: center display: block; margin-left: auto;margin-right: auto;" >
+                                      <img class = "result-img" src={{url_for('static', filename ='images/'+ img)}} width="100%">
+                                    </row>
+                                  </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% else %}
+Don't understand!
+{% endif %}
+<section id="services" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Recommended Hospitals</h2>
+          <p>Hospitals and Medicals Nearby</p>
+        </div>
+
+          <div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDjXQWn6VopL_UcO4q6n1MYEOQrY7A7K8&libraries=places&callback=initMap" async defer></script>
+
+<style>
+    html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 500px;
+  margin: 10px auto;
+  width: 800px;
+}
+</style>
+<script>
+    var map;
+
+function initMap() {
+    // Create the map.
+    var pyrmont = {
+        lat: {{lat}} ,
+        lng: {{lng}}
+    };
+    if (navigator.geolocation) {
+        try {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pyrmont = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+            });
+        } catch (err) {
+
+        }
+    }
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 17
+    });
+
+    // Create the places service.
+    var service = new google.maps.places.PlacesService(map);
+
+    // Perform a nearby search.
+    service.nearbySearch({
+            location: pyrmont,
+            radius: 4000,
+            type: ['hospital']
+        },
+        function(results, status, pagination) {
+            if (status !== 'OK') return;
+
+            createMarkers(results);
+            getNextPage = pagination.hasNextPage && function() {
+                pagination.nextPage();
+            };
+        });
+}
+
+function createMarkers(places) {
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+</script>
+
+</div>
+    </section>
+
+
+           <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Recommended Doctors</h2>
+          <p>Experts of this Domain</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="static/assets/img/team/team-1.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr Y K Mishra</h4>
+                <span>MBBS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="static/assets/img/team/team-2.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr. H. S. Chhabra</h4>
+                <span>BHMS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="static/assets/img/team/team-3.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr IPS Oberoi</h4>
+                <span>Master of Surgery - MS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="static/assets/img/team/team-4.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr. Sandeep Vaishya </h4>
+                <span>Doctor of Medicine - MD</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+          <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
+        </div>
+        {% if model == 'pneumonia'%}
+              <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                Am I at risk for pneumonia?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Anyone can get pneumonia, but some people are at a higher risk than others. Talk with your doctor to determine if you are at high risk.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                What vaccines should I get?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Pneumonia can be prevented. Get a flu shot every year to prevent seasonal influenza. The flu is a common cause of pneumonia, so preventing the flu is a good way to prevent pneumonia.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                What are the symptoms of pneumonia?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Symptoms of pneumonia may vary but the most common are cough (with some pneumonias you may cough up greenish or yellow mucus, or even bloody mucus), fever, chills and shortness of breath. If you are concerned you might have pneumonia, call your doctor immediately.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+               What are the different types of pneumonia?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  There are several different types of pneumonia including bacterial, viral, mycoplasma and others. The type of pneumonia you have determine how it is treated. If you are diagnosed with pneumonia, ask your doctor what kind you have and what treatment is recommended.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+                What else can I do to keep my lungs healthy?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Good health habits can help prevent pneumonia and other lung diseases. Practice good oral hygiene and hand washing. If you are at higher risk for pneumonia Avoid crowds, people who are ill and exposure to lung irritants like cigarette smoke and air pollution.
+
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        {% elif model == 'tb'%}
+              <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                Who is at risk for tuberculosis?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Persons who are at high risk for TB infection include people who:  have been in close contact with a person with tuberculosis disease; immigrated from or spent a considerable amount of time in a country where there are high rates of TB; are homeless; injects drug; are living with HIV infection; live in congregate settings; and/or have a medical condition that weakens the immune system.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                What are the symptoms of tuberculosis?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  People with TB infection do not feel sick and not not have any symptoms.
+
+People who develop TB disease have symptoms based on where in the body the TB bacteria are growing.  TB bacteria usually grow in the lungs and symptoms can include:  bad cough that last 3 weeks or longer, pain in the chest, coughing up blood or sputum, weakness/fatigue, weight loss, chills, fever and night sweats.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                How soon do symptoms appear after you are infected?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    People can be tested to see if they have TB infection 8-10 weeks after they are initially infected.  People with only TB infection are unlikely to have any symptoms.
+
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                How long can someone spread tuberculosis?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  A person with TB disease may remain contagious until he/she has been on appropriate treatment for several weeks. It is important to note that a person with TB infection, but not disease, cannot spread the infection to others, since there are no TB bacteria in the sputum.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+                What would happen to a person if they don't take treatment for tuberculosis?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  If you have TB disease, in addition to spreading the disease to others, an untreated person may become severely ill or die.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        {% elif model == 'db'%}
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                What should my blood sugar be?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  The Indian Diabetes Association recommends a blood glucose range of 80-130 before meals and less than 180 about 2 hours after a meal. This range should place your A1c under 7.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                What can I eat if I have diabetes?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  You can eat just about anything you want. It is about knowing proper portion sizes and how much you are putting on your plate. A dietitian can help you learn to count carbohydrates and with meal planning that is specific for you.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                Why does it matter if my blood sugar is 120 or 200?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    It is very important to keep your blood sugar level under control. When your blood sugar level is high, it can cause damage in your veins and arteries. This damage could lead to complications later such as heart attacks, strokes, kidney disease, neuropathies, vision problems, etc.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                Do I need to follow a low carb diet?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                   Carbohydrates are an important part of a healthy diet. With diabetes, watching portion sizes and getting most of your carbs from fruits, vegetables, whole grains and low fat milk and yogurt is key. Besides counting carbs, people with diabetes can also benefit from eating lower fat, high fiber foods and just enough calories to maintain a healthy weight.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+                If it is sugar free, I can eat as much as I want, right?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                   Sugar free foods can be part of a healthy meal plan in small amounts. Keep in mind though that some of these foods still have carbs (in the form of other sweeteners such as sorbitol, isomalt, and mannitol) and may affect your blood glucose levels. Many sugar free foods have calories and carbohydrates and lots of fat. Make sure you read the nutrition labels.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        {% elif model == 'hd'%}
+
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                What's the Link Between Smoking and Heart Disease?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  About 30% of deaths from heart disease in the U.S. are directly related to cigarette smoking. Smoking is a major cause of atherosclerosis.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                What Dietary Changes Can I Make to Reduce My Heart Disease Risk?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Eating right is a powerful way to reduce or even eliminate some heart disease risk factors. A heart-healthy diet can help cut total and LDL ("bad") cholesterol, lower blood pressure, lower blood sugar, and help you shed pounds.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                What Is Cholesterol?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                   Cholesterol is a soft, waxy material made in the liver. It’s in foods such as egg yolks, milk fat, organ meats, and shellfish.
+
+You can lower your high cholesterol levels by eating foods low in saturated fats, sugar, and calories.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                What does sudden cardiac arrest mean for the heart?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+
+Sudden cardiac arrest stops the blood from flowing to vital organs, including the brain.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+                What are symptoms of a heart attack?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 - fatigue,
+- weakness,
+- shortness of breath,
+- dizziness,
+- palpitations,
+- chest discomfort and/or pain,
+- chest heaviness,
+- nausea,
+- vomiting, and
+- pain that radiates to the jaw, arm, or throat.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        {% elif model == 'pk'%}
+
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+               Is There a Cure for Parkinson's Disease?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Although research is ongoing, to date there is no known cure or way to prevent Parkinson's disease. Still, research in Parkinson's disease has made remarkable progress. There is very real hope that the causes, whether genetic or environmental, will be identified and the precise effects of these causes on brain function will be understood. These remarkable achievements give real hope for the future.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+               What Causes Parkinson's Disease?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                It is unclear what causes Parkinson’s. While some cases can be traced to a genetic mutation, the disease typically doesn’t run in families. Environmental factors, coupled with genetics, could play a role in the development of Parkinson’s
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+               Can Parkinson's Be Prevented?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                To date, there is no known way to prevent Parkinson's disease. But, there are several treatment options, including drug therapy and/or surgery that can reduce the symptoms, and make living with the disease easier.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                What Is the Difference Between Tremors and Parkinson's Disease?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+           The most common cause of tremor (involuntary shaking) is a condition called essential tremor. Both essential tremor (ET) and Parkinson's disease (PD) are movement disorders. A movement disorder can be defined as any disease or injury that interferes with an individual's movement.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+               How Can I Better Cope With Having Parkinson's Disease?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The most important step you can take is to seek help as soon as you feel less able to cope with Parkinson's disease. Taking action early will enable you to understand and deal with the many effects of your condition. A mental health care provider can design a treatment plan to meet your specific needs. Strategies can be designed to help you regain a sense of control over your life and improve your quality of life.
+
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        {% elif model == 'od'%}
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                Why do I get sick?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  When you get sick, part or all of your body is not working as it should. The cause of sickness can come from inside your body or from the outside world. Diseases that start on the inside are usually inherited in the genes that you receive from your parents, which make up the master plan that determines how your body will grow and run. Abnormal development or functioning of different body systems is the cause of many chronic diseases.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+               How do the disease-causing germs invade my body?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Your skin is a wonderful protective barrier that prevents many of the disease-causing germs that you run into each day from entering your body. Only when you have an opening in your skin—like a cut or a scrape—are germs likely to enter there. Most germs enter through your mouth and nose, making their way farther into your body through your respiratory or digestive tracts. But even then, certain chemicals in body tissues and fluids keep many harmful germs from causing problems.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                What is the difference between bacteria and viruses?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                    Bacteria are single-celled organisms that have the ability to feed themselves and to reproduce. They are found everywhere, including the air, water, and soil. They divide and multiply very quickly, which means that one cell can become 1 million cells in just a few hours. Viruses are microorganisms that are smaller than bacteria, but they cannot grow or reproduce without the help of a separate living cell. Once a virus gets inside your body, it attaches itself to a healthy cell and uses the cell’s nucleus to reproduce itself.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                Do our intestines contain germs?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Yes, our intestines contain germs. Germs aren't all bad—in fact, some are helpful. For example, the common bacterium E. coli can be found in our intestines, and it helps us digest green vegetables and beans (also making gases). These same bacteria also make vitamin K, which causes blood to clot.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+               What are allergies?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  An allergic reaction is a reaction to a substance that is typically harmless to most other people. Allergies happen when a person’s immune system overreacts to a substance that the person has breathed in, touched, or eaten. Allergens—the antigens that bring on an allergic reaction—may be foods, medications, plants or animals, chemicals, dust, or molds.
+
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+
+        {% elif model == 'bt' %}
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                What is a brain tumor?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  A brain tumor is an abnormal growth of tissue in the brain or central nervous system that can disrupt proper brain function. There are two main categories of brain tumors. Primary brain tumors start in the brain or a structure of the brain. They may grow into other parts of the brain or into the spine, but rarely to other organs. Metastatic, or secondary, tumors begin in another part of the body, such as the breast or lung, and then spread to the brain. Metastatic tumors are much more common than primary brain tumors and are named by the location where they originate. For example, when lung cancer spreads to the brain, physicians consider it lung cancer in the brain — not brain cancer.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                What is the difference between a benign tumor and a malignant tumor?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Primary brain tumors are categorized as either benign or malignant. Less aggressive brain tumors are called benign. They grow slowly and typically have clear borders that do not invade surrounding tissue. Meningiomas are an example of brain tumors that are usually benign.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                How many different types of brain tumors are there?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Classification of brain tumors is complex. There are more than 120 types of brain and nervous system tumors that develop from different cell types.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                What are the risk factors for getting primary brain tumors?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                Research is ongoing to find the answer to this question. Risk factors may include:
+
+Exposure to large doses of radiation over time, such as exposure to low electromagnetic fields, or certain chemicals
+Family history and genetic conditions
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+                What can I do to avoid brain tumors?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                Lifestyle, environment, and genes can all affect the likelihood of getting cancer. Living a healthy lifestyle by exercising, eating well, and avoiding tobacco use can lower your risk of cancer. Some brain tumors, however, occur spontaneously. So, stay aware of your health and wellness. If something doesn’t seem right, talk to your doctor.
+
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        {% elif model == 'ct' %}
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                 What are cataracts?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                 Cataracts occur when the lens in your eye becomes cloudy or foggy. Some people describe having cataracts as looking at the world through a cloudy window. This causes blurry or distorted vision for those with cataracts.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                Will cataract surgery hurt?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Patients who have cataract surgery do not say that it was painful. Most say that they experienced some discomfort.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+               Is vision loss from cataracts permanent?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 No, your vision loss is not permanent. During cataract surgery, your surgeon will remove the natural lens and replace it with an artificial one. The lens is what allows you to have clear vision after cataract surgery.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                At what age will I get cataracts?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Cataracts are very common as a result of aging. You may start developing cataracts in your forties or fifties and not even realize it.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+              Will everyone get cataracts?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Not everyone develops cataracts or needs cataract surgery. By the age of 80, at least half of your peers will already have or had cataracts.
+
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        {% endif %}
+
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+
+         <!-- ======= Contact Section ======= -->
+    <section id="insurance" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Claim Medical Insurance</h2>
+          <p>Calculate your Insurance</p>
+        </div>
+
+        <!-- ======= Insurance Section ======= -->
+    <section id="details" class="details">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="static/assets/img/insurance.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-4" data-aos="fade-up">
+            <h3>Calculate your medical Insurance and claim from our partnered companies.</h3>
+            <p class="fst-italic">
+              We have partnered up with some legitimate medical insurance companies which would give you health insurance at right amount.
+                Calculate the Insurance amount for your medical Insurance
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Calculates accurate insurance amount.</li>
+              <li><i class="bi bi-check"></i> Legitimate Insurance providing companies.</li>
+              <li><i class="bi bi-check"></i> Easy to claim insurance process.</li>
+              <li><i class="bi bi-check"></i> Guaranteed authenticity.</li>
+            </ul>
+            <p>
+              Click the link below to calculate your health insurance
+            </p>
+
+              <a href="/insurance_form" class="btn-get-started scrollto">Calculate Insurance</a>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- End insurance Section -->
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Book an Appointment</h2>
+          <p>Appointment Details</p>
+        </div>
+
+        <div class="row">
+
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+
+            <form action="/send-data" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="time" id="time" placeholder="Timing Slot" required>
+              </div>
+
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="hospital" id="hospital" placeholder="Hospital Details" required>
+              </div>
+
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message d-block">Status:</div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Multi Disease Prediction</h3>
+              <p class="pb-3"><em>We need to bring the exam room to where the patients are.</em></p>
+              <p>
+                Chinchwad 411019 <br>
+                India, Pune<br><br>
+                <strong>Phone:</strong> +91 7709933888<br>
+                <strong>Email:</strong> paritprathamesh23@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Predict Diseases</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Doctors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Hospitals</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Insurance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Medical</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Contact us</h4>
+            <p>Our helpline is available for 24x7 </p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Contact">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

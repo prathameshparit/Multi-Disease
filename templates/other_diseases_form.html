@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Multi Disease Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/assets/css/custom.css">
+  <link rel="stylesheet" href="static/assets/css/form.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name"><a href="/"> Disease Prediction</a></div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="db_form">
+          <i class="uil uil-medical-drip"></i>
+          <span class="links_name">Diabetes Prediction</span>
+        </a>
+         <span class="tooltip">Diabetes Prediction</span>
+      </li>
+      <li>
+       <a href="hd_form">
+         <i class="uil uil-heartbeat"></i>
+         <span class="links_name">Heart Disease Prediction</span>
+       </a>
+       <span class="tooltip">Heart Disease Prediction</span>
+     </li>
+     <li>
+       <a href="pk_form">
+         <i class="uil uil-bed"></i>
+         <span class="links_name">Parkinson's Disease</span>
+       </a>
+       <span class="tooltip">Parkinson's Disease</span>
+     </li>
+     <li>
+       <a href="od_form">
+         <i class="uil uil-medkit"></i>
+         <span class="links_name">Other Diseases</span>
+       </a>
+       <span class="tooltip">Other Diseases</span>
+     </li>
+
+    </ul>
+  </div>
+    <section class="home-section">
+      <div class="text"><a href="/"> Disease Prediction</a></div>
+
+      <div class="container">
+        <header>Other Disease Prediction</header>
+
+        <form action="{{ url_for('od_form')}}" method="post">
+<!--            <div class="form first">-->
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname"placeholder="Enter your name" value="Prathamesh Parit" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Medical Report</span>
+
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label for="1">itching</label>
+                            <input type="text" id="1" name="1" type="number" placeholder="Enter itching" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="2">skin_rash</label>
+                            <input type="text" id="2" name="2" type="text" placeholder="Enter skin_rash" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="3">shivering</label>
+                            <input type="text" id="3" name="3" type="text" placeholder="Enter shivering" value=1 required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="4">chills</label>
+                            <input type="text" id="4" name="4" type="text" placeholder="Enter chills" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="5">vomiting</label>
+                            <input type="text" id="5" name="5" type="text" placeholder="Enter vomiting" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="6">fatigue </label>
+                            <input type="text" id="6" name="6" type="text" placeholder="Enter fatigue" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="7">high_fever </label>
+                            <input type="text" id="7" name="7" type="text" placeholder="Enter high_fever" value="0" required>
+                        </div>
+
+
+                        <div class="input-field">
+                            <label for="8">headache</label>
+                            <input type="text" id="8" name="8" type="text" placeholder="Enter headache" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="9">yellowish_skin</label>
+                            <input type="text" id="9" name="9" type="text" placeholder="Enter yellowish_skin" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="10">nausea</label>
+                            <input type="text" id="10" name="10" type="text" placeholder="Enter nausea" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="11">loss_of_appetite</label>
+                            <input type="text" id="11" name="11" type="text" placeholder="Enter loss_of_appetite" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="12">pain_behind_the_eyes</label>
+                            <input type="text" id="12" name="12" type="text" placeholder="Enter pain_behind_the_eyes" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="13">abdominial_pain</label>
+                            <input type="text" id="13" name="13" type="text" placeholder="Enter abdominial_pain" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="14">diarrhoea</label>
+                            <input type="text" id="14" name="14" type="text" placeholder="Enter diarrhoea" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="15">mild_fever</label>
+                            <input type="text" id="15" name="15" type="text" placeholder="Enter mild_fever" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="16">yellowing_of_eyes</label>
+                            <input type="text" id="16" name="16" type="text" placeholder="Enter yellowing_of_eyes" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="17">malaise </label>
+                            <input type="text" id="17" name="17" type="text" placeholder="Enter malaise" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="18">runny_nose</label>
+                            <input type="text" id="18" name="18" type="text" placeholder="Enter runny_nose" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="19">chest_pain</label>
+                            <input type="text" id="19" name="19" type="text" placeholder="Enter chest_pain" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="20">pain_in_anal_region</label>
+                            <input type="text" id="20" name="20" type="text" placeholder="Enter pain_in_anal_region" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="21">neck_pain</label>
+                            <input type="text" id="21" name="21" type="text" placeholder="Enter neck_pain" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="22">dizziness</label>
+                            <input type="text" id="22" name="22" type="text" placeholder="Enter dizziness" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="23">swollen_extremeties</label>
+                            <input type="text" id="23" name="23" type="text" placeholder="Enter swollen_extremeties" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="24">slurred_speech</label>
+                            <input type="text" id="24" name="24" type="text" placeholder="Enter slurred_speech" value="0" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="25">loss_of_balance</label>
+                            <input type="text" id="25" name="25" type="text" placeholder="Enter loss_of_balance" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="26">bladder_discomfort</label>
+                            <input type="text" id="26" name="26" type="text" placeholder="Enter bladder_discomfort" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="27">irritability</label>
+                            <input type="text" id="27" name="27" type="text" placeholder="Enter irritability" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="28">increased_appetite</label>
+                            <input type="text" id="28" name="28" type="text" placeholder="Enter increased_appetite" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="29">stomach_bleeding</label>
+                            <input type="text" id="29" name="29" type="text" placeholder="Enter stomach_bleeding" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="30">painful_walking</label>
+                            <input type="text" id="30" name="30" type="text" placeholder="Enter painful_walking" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="31">small_dents_in_nails</label>
+                            <input type="text" id="31" name="31" type="text" placeholder="Enter small_dents_in_nails" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="32">blister</label>
+                            <input type="text" id="32" name="32" type="text" placeholder="Enter blister" value="1" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="33">prognosis</label>
+                            <input type="text" id="33" name="33" type="text" placeholder="Enter prognosis" value="0" required>
+                        </div>
+
+                    </div>
+                    <div class="buttons">
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="static/js/form.js"></script>
+
+
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+</body>
+</html>
