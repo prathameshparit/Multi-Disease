@@ -1,4 +1,4 @@
-# 32 Descent Gradient
+# Multi-Disease-Prediction
 ## _VIIT Hackathon DevCup 2022_
 
 This is our Submission for the VIIT Hackathon, DevCup 2022.
