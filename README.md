@@ -88,13 +88,6 @@ Run app.py after completing all the steps.
 [Numpy]: <https://numpy.org/>
 [Pandas]: <https://pandas.pydata.org/>
 
-   [a]: <https://www.kaggle.com/datasets/rizwan123456789/potato-disease-leaf-datasetpld>
-   [b]: <https://www.kaggle.com/code/paritprathamesh/spam-or-not-spam-pp/data>
-   [c]: <https://www.kaggle.com/competitions/titanic/data>
-   [d]: <https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data>
-   [e]: <https://www.kaggle.com/competitions/digit-recognizer/data>
-   [f]: <https://www.kaggle.com/competitions/facial-keypoints-detection/data>
-   [g]: <https://www.kaggle.com/competitions/word2vec-nlp-tutorial/data>
    
    
    [1]: <https://github.com/prathameshparit/Multi-Disease-Prediction/>
