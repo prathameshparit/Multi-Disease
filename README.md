@@ -14,7 +14,7 @@ One stop solution for most of your medical needs. The features included in the s
 
 The services which we offer provides a whopping prediction on 50+ diseases.
 
-## Website
+## Demo
 
 https://user-images.githubusercontent.com/63944541/209446537-710524b2-4c07-4405-96c6-323fce912cd4.mov
 
