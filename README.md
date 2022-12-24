@@ -16,13 +16,7 @@ The services which we offer provides a whopping prediction on 50+ diseases.
 
 ## Website
 
-Part-1
-
-![IMG](https://github.com/prathameshparit/Multi-Disease-Prediction/blob/main/MDP-1.gif?raw=true)
-
-Part-2
-
-![IMG](https://github.com/prathameshparit/Multi-Disease-Prediction/blob/main/MDP-2.gif?raw=true)
+https://user-images.githubusercontent.com/63944541/209446537-710524b2-4c07-4405-96c6-323fce912cd4.mov
 
 ## Tech
 
