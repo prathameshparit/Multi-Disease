@@ -1,5 +1,5 @@
 # Multi-Disease-Prediction
-## _VIIT Hackathon DevCup 2022_
+
 
 This is our Submission for the VIIT Hackathon, DevCup 2022.
 
@@ -30,7 +30,7 @@ The website uses a number of open source projects to work properly:
 - [Pandas] - Used for data analysis and associated manipulation of tabular data in Dataframes
 
 # Code
-
+ 
 | Diseases | Notebook |
 | ------ | ------ |
 | Heart Disease Prediction | [Multi-Disease-Prediction/heart-disease][1] |
