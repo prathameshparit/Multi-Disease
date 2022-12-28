@@ -19,7 +19,7 @@ The services which we offer provides a whopping prediction on 50+ diseases.
 https://user-images.githubusercontent.com/63944541/209446537-710524b2-4c07-4405-96c6-323fce912cd4.mov
 
 ## Tech
-
+https://user-images.githubusercontent.com/63944541/209852374-052968fb-8c37-432e-81ef-732ea7dd18a8.mov
 The website uses a number of open source projects to work properly:
 
 - [Tensorflow] - Deep learning application framework
