@@ -97,3 +97,5 @@ Run app.py after completing all the steps.
    [5]: <https://github.com/prathameshparit/Multi-Disease-Prediction/>
    [6]: <https://github.com/prathameshparit/Multi-Disease-Prediction/>
    [7]: <https://github.com/prathameshparit/Multi-Disease-Prediction/>
+
+ 
